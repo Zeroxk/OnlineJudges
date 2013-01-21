@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define REP(i,n) for(int _n=(n),i=0; i<_n;i++)
+using namespace std;
 int main() {
 
 	int n;
@@ -9,12 +10,12 @@ int main() {
 
 		int a,b,c,middle;
 		scanf("%d%d%d",&a,&b,&c);
-		
-		if((a < b && b < c) || (c < b && b < a)) {
+printf("%d %d %d\n",a,b,c);		
+if(a < b < c || c < b < a) {
 			middle = b;
-		}else if((b < a && a < c) || (c < a && a < b)) {
+		}else if(b < a < c || c < a < b) {
 			middle = a;
-		}else if ((a < c && c < b) || (b < c && c < a)) {
+	}else if (a < c < b || b < c < a) {
 			middle = c;
 		}
 		

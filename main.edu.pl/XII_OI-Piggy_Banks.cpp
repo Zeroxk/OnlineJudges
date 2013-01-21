@@ -51,8 +51,9 @@ int main(void) {
     
         int key;
         scanf("%d",&key);
+        key--;
         graph[i].push_back(key);
-    
+        graph[key].push_back(i);
     }
     
     for(int i=0; i<piggyBanks; i++) {
@@ -62,7 +63,7 @@ int main(void) {
     }
 
     int components = findAllComponents(graph);
-    printf("%d",components);
+    printf("%d\n",components);
 
     return 0;
 

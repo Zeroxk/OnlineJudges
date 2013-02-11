@@ -1,54 +1,62 @@
 #include <cstdio>
 #include <vector>
 const int MAXNODES = 1000000;
-int visited [MAXNODES];
 
 typedef struct {
 
     int elem;
-    node* parent;
+    Node *parent;
 
 
 }Node;
 
 Node find(Node n) {
 
-    if(n.parent == n) {
+    if(n->parent == n) {
         return n;
     }else {
-        return find(n.parent);
+        return find(n->parent);
     }
 
 }
+
 
 void myUnion(Node x, Node y) {
 
     Node xLeader = find(x);
     Node yLeader = find(y);
-    xLeader.parent = yLeader;
+    if(xLeader != yLeader) {
+        xLeader->parent = yLeader;
+    }
 
 }
 
 int main(void) {
 
-    int piggyBanks;
+    int piggyBanks,components;
     scanf("%d",&piggyBanks);
-    std::vector<node> graph = std::vector<node>();
+    components = piggyBanks;
+    std::vector<Node> graph = std::vector<Node>();
+
+    for(int i=0;i<piggyBanks;i++) {
+    
+        Node n = {i,&n};
+        graph.push_back(n);
+    
+    }
 
     for(int i=0;i<piggyBanks;i++) {
     
         int key;
         scanf("%d",&key);
         key--;
+       
+        if(key != i) {
         
-        Node n;
-        n.elem = i;
-        n.parent = &n;
+            myUnion(graph[i], graph[key]);
+            components--;
         
-        Node m;
-        m.elem = key;
-        m.parent = &n;
-
+        }
 
     }
     

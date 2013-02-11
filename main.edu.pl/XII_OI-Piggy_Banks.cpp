@@ -10,21 +10,21 @@ typedef struct {
 
 }Node;
 
-Node find(Node n) {
+Node find(Node* n) {
 
-    if(n->parent == n) {
+    if(&n.parent == n) {
         return n;
     }else {
-        return find(n->parent);
+        return find(&n.parent);
     }
 
 }
 
 
-void myUnion(Node x, Node y) {
+void myUnion(Node* x, Node* y) {
 
-    Node xLeader = find(x);
-    Node yLeader = find(y);
+    Node xLeader = find(&x);
+    Node yLeader = find(&y);
     if(xLeader != yLeader) {
         xLeader->parent = yLeader;
     }

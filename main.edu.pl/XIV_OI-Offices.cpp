@@ -6,18 +6,32 @@ std::vector<int> officeSize;
 int components;
 int visited[MAXNODES];
 
+void dfs(std::vector<std:.vector<int> >& g, int node);
+
 void makeInverse(std::vector<std::vector<int> >& g) {
 
     for(int i=0;i<g.size();i++) {
         for(int j=0;j<g[i].size();j++) {
         
-               
+            for(int k=0;j<g.size();i++) {
+                bool found = false;
+                if(k != i && k == g[i][j]) {
+                    found = true;
+                }
+                
+                if(!found) {
+                    g[i].push_back(k);
+                    g[k].push_back(i);
+                }
+
+            }
 
         }
     
     }
 
 }
+
 
 int findComponents(std::vector<std::vector<int> >& g) {
 
@@ -26,6 +40,7 @@ int findComponents(std::vector<std::vector<int> >& g) {
         
             if(visited[i] == -1) {
                 dfs(g, i);
+                officeSize.push_back(0);
                 components++;
             }
         

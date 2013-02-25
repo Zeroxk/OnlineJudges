@@ -46,26 +46,21 @@ public class Freckles {
 			
 			double sumLen = 0.0;
 			while(tree.size() < nodes.size()) {
-				Node u = tree.get(tree.size()-1);
-				Node v = null;
-				Edge e = null;
-				for (int i = 0; i < edges.size(); i++) {
-					Edge f = edges.get(i);
-					if(treeEdges.contains(f)) continue;
-					if(f.getA().equals(u) || f.getB().equals(u)) {
-						v = f.getA() == u ? f.getB() : f.getA();
-						if(!tree.contains(v)) {
-							e = edges.get(i);
-						break;
-						}
-						
-					}
-				}
-				
-				
+
+				for (Edge e : edges) {
+					if(treeEdges.contains(e)) continue;
+					Node a = e.getA();
+					Node b = e.getB();
+					if(tree.contains(a) && tree.contains(b)) continue;
+
+					Node v = tree.contains(a) ? b : a;
+
 					tree.add(v);
 					treeEdges.add(e);
 					sumLen += e.getLen();
+				}
+//				sumLen += 0;
+
 			}
 			
 			System.out.printf("%.2f\n", sumLen);

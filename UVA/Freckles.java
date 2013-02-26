@@ -9,62 +9,61 @@ public class Freckles {
 		int cases = 0;
 		Scanner in = new Scanner(System.in);
 		cases = in.nextInt();
-		
+
 		for (int t = 0; t < cases; t++) {
-			
+
 			int freckles;
 			freckles = in.nextInt();
 			ArrayList<Node> nodes = new ArrayList<Node>();
 			for (int i = 0; i < freckles; i++) {
-				
+
 				double a,b;
 				a = in.nextDouble();
 				b = in.nextDouble();
 				Node n = new Node(a, b);
 				nodes.add(n);
 			}
-			
+
 			ArrayList<Edge> edges = new ArrayList<Edge>();
 			for (int i = 0; i < nodes.size(); i++) {
 				Node a = nodes.get(i);
-				
+
 				for (int j = i+1; j < nodes.size(); j++) {
 					Node b = nodes.get(j);
 					double c,d,len;
-					c = Math.pow((a.getX()-b.getX()), 2.0);
-					d = Math.pow( (a.getY()-b.getY()), 2.0);
+					c = Math.pow((b.getX()-a.getX()), 2.0);
+					d = Math.pow( (b.getY()-a.getY()), 2.0);
 					len = Math.sqrt( (c + d) );
 					Edge e = new Edge(a, b, len);
 					edges.add(e);
 				}
 			}
-			
+
 			ArrayList<Node> tree = new ArrayList<Node>();
 			ArrayList<Edge> treeEdges = new ArrayList<Edge>();
 			tree.add(nodes.get(0));
 			Collections.sort(edges);
-			
+
 			double sumLen = 0.0;
-			while(tree.size() < nodes.size()) {
 
-				for (Edge e : edges) {
-					if(treeEdges.contains(e)) continue;
-					Node a = e.getA();
-					Node b = e.getB();
-					if(tree.contains(a) && tree.contains(b)) continue;
+			for (Edge e : edges){
+				if(tree.size() == nodes.size()) break;
+				Node a = e.getA();
+				Node b = e.getB();
 
+				if(!(tree.contains(a) && tree.contains(b))) {
 					Node v = tree.contains(a) ? b : a;
 
 					tree.add(v);
 					treeEdges.add(e);
 					sumLen += e.getLen();
 				}
-//				sumLen += 0;
+
 
 			}
-			
+
 			System.out.printf("%.2f\n", sumLen);
-			
+
 		}
 	}
 
@@ -114,8 +113,8 @@ class Node{
 	public String toString() {
 		return "Node [x=" + x + ", y=" + y + "]";
 	}
-	
-	
+
+
 
 }
 
@@ -155,16 +154,16 @@ class Edge implements Comparable<Edge>{
 
 	@Override
 	public int compareTo(Edge e) {
-		if(this.len < e.len) return -1;
-		if(this.len == e.len) return 0;
-		if(this.len > e.len) return 1;
-		return 0;
+		//		if(this.len < e.getLen()) return -1;
+		//		if(this.len == e.getLen()) return 0;
+		//		if(this.len > e.getLen()) return 1;
+		return Double.compare(this.getLen(), e.getLen());
 	}
 
 	@Override
 	public String toString() {
 		return "Edge [a=" + a + ", b=" + b + ", len=" + len + "]";
 	}
-	
-	
+
+
 }

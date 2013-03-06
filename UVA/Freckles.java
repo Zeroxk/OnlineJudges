@@ -41,8 +41,10 @@ public class Freckles {
 
 			ArrayList<Node> tree = new ArrayList<Node>();
 			ArrayList<Edge> treeEdges = new ArrayList<Edge>();
-			//tree.add(nodes.get(0));
 			Collections.sort(edges);
+Node h  = edges.size() == 0 ? nodes.get(0) : edges.get(0).getA();
+			tree.add(h);
+			//for(Edge e: edges) {System.out.println(e.toString() ); }
 
 			double sumLen = 0.0;
 
@@ -51,12 +53,19 @@ public class Freckles {
 				Node a = e.getA();
 				Node b = e.getB();
 
-				//if(tree.contains(a) && tree.contains(b)) {
-					if(!tree.contains(a) && !tree.contains(b)) {
+				if((tree.contains(a) && tree.contains(b))) {
+					//System.out.println("Both are in MST");
+					//Node v = tree.contains(a) ? b : a;
+
+					//tree.add(v);
+					//treeEdges.add(e);
+					//sumLen += e.getLen();
+				}else if(!tree.contains(a) && !tree.contains(b)) {
 						tree.add(a); tree.add(b);
 						treeEdges.add(e); sumLen += e.getLen();
 					
-					} else if(tree.contains(a) && !tree.contains(b)) {
+					}else {Node v = tree.contains(a) ? b:a; tree.add(v); treeEdges.add(e); sumLen += e.getLen(); }  
+					/*else if(tree.contains(a) && !tree.contains(b)) {
 						tree.add(b);
 						treeEdges.add(e);
 						sumLen += e.getLen(); //System.out.println("Added node to MST");	
@@ -64,14 +73,7 @@ public class Freckles {
 						tree.add(a);
 						treeEdges.add(e);
 						sumLen += e.getLen(); //System.out.println("Added node to MST");	
-					}else {
-						//System.out.println("Both are in tree");
-					}
-					//Node v = tree.contains(a) ? b : a;
-
-					//tree.add(v);
-					//treeEdges.add(e);
-					//sumLen += e.getLen();
+					}*/
 				//}
 
 

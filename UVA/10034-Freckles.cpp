@@ -7,7 +7,7 @@ struct Node {
 
     double x,y;
     Node* parent;
-
+    int rank;
 };
 
 struct Edge {
@@ -23,11 +23,11 @@ bool eq (Node* n, Node* m) {
 }
 
 Node* findLeader(Node* n) {
-    if( eq(n, n->parent) ) {
-        return n;
-    }else {
-        return findLeader(n->parent);
+    if( !eq(n, n->parent) ) {
+        n->parent = findLeader(n->parent);
     }
+    return n->parent;
+   
 }
 
 bool myUnion (Node* n, Node* m) {
@@ -38,7 +38,14 @@ bool myUnion (Node* n, Node* m) {
     if( !eq(xL, yL) ) {
         //printf("n coords: %.2f, %.2f \t m coords: %.2f, %.2f\n", n->x, n->y, m->x, m->y);
         //printf("xL coords: %.2f, %.2f \t yL coords: %.2f, %.2f\n", xL->x, xL->y, yL->x, yL->y);
-        xL->parent = yL;
+        if (xL->rank < yL->rank) {
+            xL->parent = yL;
+        }else if(xL->rank > yL->rank) {
+            yL->parent = xL;
+        }else {
+            yL->parent = xL;
+            xL->rank = xL->rank + 1;
+        }
         //printf("n's parent now has coords; %.2f, %.2f \t xL coords is: %.2f, %.2f\n", n->parent->x, n->parent->y, xL->x, xL->y);
         return true;
     }
@@ -69,6 +76,7 @@ int main(void) {
             Node n = {a,b};
             nodes[i] = n;
             nodes[i].parent = &nodes[i];
+            nodes[i].rank = 0;
         }
         std::vector<Edge> edges = std::vector<Edge>();
 

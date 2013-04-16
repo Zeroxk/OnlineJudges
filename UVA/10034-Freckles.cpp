@@ -3,29 +3,53 @@
 #include <algorithm>
 #include <cmath>
 
-typedef struct Node {
+struct Node {
 
-    float x,y;
+    double x,y;
+    Node* parent;
 
 };
 
-typedef struct Edge {
+struct Edge {
 
     Node* a;
     Node* b;
-    float cost;
+    double cost;
 
 };
 
-bool compareX(Node a, Node b) {
+bool eq (Node* n, Node* m) {
+    return n->x == m->x && n->y == m->y;
+}
 
-   return a.x < b.x; 
+Node* findLeader(Node* n) {
+    if( eq(n, n->parent) ) {
+        return n;
+    }else {
+        return findLeader(n->parent);
+    }
+}
+
+bool myUnion (Node* n, Node* m) {
+
+    Node* xL = findLeader(n);
+    Node* yL = findLeader(m);
+
+    if( !eq(xL, yL) ) {
+        //printf("n coords: %.2f, %.2f \t m coords: %.2f, %.2f\n", n->x, n->y, m->x, m->y);
+        //printf("xL coords: %.2f, %.2f \t yL coords: %.2f, %.2f\n", xL->x, xL->y, yL->x, yL->y);
+        xL->parent = yL;
+        //printf("n's parent now has coords; %.2f, %.2f \t xL coords is: %.2f, %.2f\n", n->parent->x, n->parent->y, xL->x, xL->y);
+        return true;
+    }
+
+    return false;
 
 }
 
-bool compareY(Node a, Node b) {
+bool cmpEdge(Edge e, Edge f) {
 
-    return a.y < b.y;
+    return e.cost < f.cost;
 
 }
 
@@ -40,47 +64,39 @@ int main(void) {
         std::vector<Node> nodes = std::vector<Node>(freckles);
         for(int i=0;i<freckles;i++) {
         
-            float a,b;
-            scanf("%f %f",&a,&b);
+            double a,b;
+            scanf("%lf %lf",&a,&b);
             Node n = {a,b};
             nodes[i] = n;
+            nodes[i].parent = &nodes[i];
         }
+        std::vector<Edge> edges = std::vector<Edge>();
 
-        /*printf("Unsorted:\n");
-        for(int i=0;i<nodes.size();i++) {
-            printf("%.2f %.2f\n",nodes[i].x,nodes[i].y);
-        }*/
-
-        std::stable_sort(nodes.begin(),nodes.end(),compareX);
-        
-        /*printf("Sorted by y:\n");
-        for(int i=0;i<nodes.size();i++) {
-            printf("%.2f %.2f\n",nodes[i].x, nodes[i].y);
-        }*/
-
-        //printf("Sorted by x and y:\n");
-        std::stable_sort(nodes.begin(),nodes.end(),compareY);
-
-        /*for(int i=0;i<nodes.size();i++) {
-            printf("%.2f %.2f\n",nodes[i].x, nodes[i].y);
-        }*/
-
-        int marker = 0;
-        float sumLen = 0;
-        for(int i=0; i<nodes.size()-1;i++) {
-        
-            Node a = nodes[i];
-            Node b = nodes[i+1];
-
-            float c,d;
-            c = pow( (a.x - b.x) , 2);
-            d = pow( (a.y - b.y) , 2);
-            float srA = sqrt( c + d );
-            sumLen += srA;
-
+        for(int i=0; i<nodes.size(); i++) {
+            for(int j=i+1; j<nodes.size(); j++) {
+                double c,d,len;
+                c = pow(nodes[j].x - nodes[i].x, 2.0);
+                d = pow(nodes[j].y - nodes[i].y, 2.0);
+                len = sqrt( c+d );
+                Edge e = {&nodes[i], &nodes[j], len};
+                edges.push_back(e);
+            }
+        }
+        std::stable_sort(edges.begin(), edges.end(), cmpEdge);
+        //for(int i=0; i<edges.size(); i++) { printf("Edge cost: %.2f\n", edges[i].cost);}
+        double sumLen = 0;
+        for(int i=0; i<edges.size();i++) {
+            if(nodes.size() == 1) break;
+           if(myUnion(edges[i].a, edges[i].b)) {
+               //printf("Picked edge with cost: %0.2f\n", edges[i].cost); 
+               sumLen += edges[i].cost;
+           } 
         }
 
         printf("%.2f\n",sumLen);
+        if(t < (cases-1)) printf("\n");
+        nodes.clear();
+        edges.clear();
 
     }
 

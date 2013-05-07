@@ -6,6 +6,10 @@ struct Edge {
     int len;
 }
 
+void dijkstra() {
+
+}
+
 int main(void) {
     int cases;
     scanf("%d\n", &cases);
@@ -33,6 +37,7 @@ int main(void) {
         }
 
         cases--;
+        
     }
 
     return 0;

@@ -1,10 +1,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
-#include <sstream>
 #include <iostream>
 #include <string>
-#include <climits>
 
 struct Edge {
     int a,b;
@@ -42,12 +40,11 @@ int solveN() {
         int min = 1000000;
         for(int j=0; j<fs.size(); j++) {
             if(fs[j] == 0) continue;
-            
-            if(dist[i][fs[j]] < min) {
-                min = dist[i][fs[j]];
+            if(dist[i][j] < min) {
+                min = dist[i][j];
             }
         }
-        printf("Min: %d, Max: %d\n", min, maxDist);
+        //printf("i : %d, Min: %d, Max: %d\n", i+1, min, maxDist);
         if(min > maxDist) {
             maxDist = min;
             node = i;
@@ -59,11 +56,12 @@ int solveN() {
 
 int main(void) {
     int cases;
-    scanf("%d\n\n", &cases);
+    scanf("%d\n", &cases);
 
     while(cases > 0) {
         int fireStations;
         scanf("%d %d\n", &fireStations, &intersections);
+        //printf("fs: %d, is: %d\n", fireStations, intersections);
         
         
             fs = std::vector<int>(intersections);
@@ -75,12 +73,18 @@ int main(void) {
             fsNode--;
             fs[fsNode] = 1;
         }
+        
+        /*printf("Firestations: ");
+        for(int i=0; i<fs.size(); i++) {
+            printf("%d ", fs[i]);
+        }
+        printf("\n");*/
 
         std::vector<Edge> edgeList = std::vector<Edge>();
 
         std::string line;
         while(getline(std::cin, line)) {
-
+//printf("I'm in\n");
             if(line == "" || std::cin.eof()) break;
 
             int vals[3];
@@ -138,20 +142,20 @@ int main(void) {
 
         //printf("FW done\n");
 
-        for(int i=0; i<intersections; i++) {
-            printf("Paths for node %d: ", i);
+        /*for(int i=0; i<intersections; i++) {
+            printf("Paths for node %d: ", i+1);
             for(int j=0; j<intersections; j++) {
                 printf("%d ", dist[i][j]);
             }
             printf("\n");
-        }
+        }*/
 
         int putFs = -1;
         if(fireStations == 0) {
-            printf("Solving for no FS\n");
+            //printf("Solving for no FS\n");
             putFs = solve1();
         }else {
-            printf("Solving for 1 or more FS\n");
+            //printf("Solving for 1 or more FS\n");
             putFs = solveN();
         }
         putFs++;

@@ -1,12 +1,12 @@
 #include <cstdio>
 #include <vector>
 
-std::vector<int> myfloor;
+//std::vector<int> myfloor;
+int myfloor[100001];
 int cars[100001];
 
-bool onFloor(int car, int totCars) {
-    if(myfloor.size() == 0) return false;
-    for(int i=0; i<totCars; i++) {
+bool onFloor(int car, int floorCars) {
+    for(int i=0; i<floorCars; i++) {
         if(myfloor[i] == car) {
             return true;
         }
@@ -19,6 +19,7 @@ int findCar(int car, std::vector<int> seq, int start) {
     for(int i=start; i<seq.size(); i++) {
         if(seq[i] == car) {
             return i;
+            break;
         }
     }
     return -2;
@@ -41,18 +42,18 @@ int main(void) {
         cars[i] = -1;
     }
 
-    myfloor = std::vector<int>();
+    //myfloor = std::vector<int>();
     int floorSize = 0;
     int shelf = 0;
     for(int i=0; i<seq.size(); i++) {
         int car = seq[i];
         
-        if(onFloor(car, totCars)) continue;
+        if(onFloor(car, maxFloor)) continue;
         
         if(floorSize < maxFloor && !onFloor(car, totCars)) {
             printf("Floor has space left\n");
-            myfloor.push_back(car);
-            printf("size: %d\n", myfloor.size());
+            //myfloor.push_back(car);
+            //printf("size: %d\n", myfloor.size());
             floorSize++;
             shelf++;
             continue;
@@ -60,11 +61,16 @@ int main(void) {
         
         //Car not on floor and full floor
         int max = 0;
-        for(int j=0; j<myfloor.size(); j++) {
+        int ind = -1;
+        for(int j=0; j<maxFloor; j++) {
+            printf("On the floor now: ");
+            for(int k=0; k<maxFloor; k++) {printf("%d ", myfloor[k]);} printf("\n");
             int car2 = myfloor[j];
 
             if(cars[car2] == -2) {
-                max = j;
+                max = cars[car2];
+                ind = j;
+                printf("%d does not appear again\n", car2);
                 break;
             }
 
@@ -72,13 +78,17 @@ int main(void) {
                 cars[car2] = findCar(car2, seq, i);
             }
 
+
+                printf("Next occurence of %d is %d\n", car2, cars[car2]);
             if(cars[car2] > max) {
-                max = j;
+                max = cars[car2];
+                ind = j;
             }
         }
-        printf("Max is: %d\n", myfloor[max]);
-        myfloor.erase(myfloor.begin()+max, myfloor.begin()+max+1);
-        myfloor.push_back(car);
+        printf("Max: %d, ind: %d\n", max, ind);
+        myfloor[ind] = car;
+        //myfloor.erase(myfloor.begin()+ind, myfloor.begin()+ind+1);
+        //myfloor.push_back(car);
         shelf++;
 
     }

@@ -37,6 +37,8 @@ int main(void) {
         a--;
         seq.push_back(a);
     }
+    
+    
 
     for(int i=0; i<totCars; i++) {
         cars[i] = -1;
@@ -50,7 +52,7 @@ int main(void) {
         
         if(onFloor(car, maxFloor)) continue;
         
-        if(floorSize < maxFloor && !onFloor(car, totCars)) {
+        if(floorSize < maxFloor && !onFloor(car, floorSize)) {
             printf("Floor has space left\n");
             //myfloor.push_back(car);
             //printf("size: %d\n", myfloor.size());
@@ -64,13 +66,13 @@ int main(void) {
         int ind = -1;
         for(int j=0; j<maxFloor; j++) {
             printf("On the floor now: ");
-            for(int k=0; k<maxFloor; k++) {printf("%d ", myfloor[k]);} printf("\n");
+            for(int k=0; k<maxFloor; k++) {printf("%d ", myfloor[k]+1);} printf("\n");
             int car2 = myfloor[j];
 
             if(cars[car2] == -2) {
                 max = cars[car2];
                 ind = j;
-                printf("%d does not appear again\n", car2);
+                printf("%d does not appear again\n", car2+1);
                 break;
             }
 
@@ -79,7 +81,7 @@ int main(void) {
             }
 
 
-                printf("Next occurence of %d is %d\n", car2, cars[car2]);
+                printf("Next occurence of %d is %d\n", car2+1, cars[car2]);
             if(cars[car2] > max) {
                 max = cars[car2];
                 ind = j;

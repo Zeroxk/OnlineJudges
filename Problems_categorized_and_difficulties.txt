@@ -1,0 +1,152 @@
+Main: http://www.main.edu.pl/
+SGU: http://acm.sgu.ru/
+LA (LiveArchive): https://icpcarchive.ecs.baylor.edu/
+UVA: http://uva.onlinejudge.org/
+Timus: http://acm.timus.ru/
+
+
+Serie 1: Basic graph algorithms (*)
+
+   UVA, 10004, Bicoloring (2)
+   LA, CEPC 2006, 3721, Islands (2)
+   Main, XII OI, Piggy Banks (3)
+   Main, XII OI, Double-row (3)
+   Main, XVII OI, Guilds (3)
+   Main, XV OI, Toll (3)
+   Main, XIV OI, Offices (3)
+   UVA, 10150, Doublets (3)
+
+Serie 2: Advanced graph algorithms
+
+   UVA, 10034, Freckles (2)
+   UVA, 10278, Fire Station (3)
+   LA, CEPC 2009, 4627, Islands (3)
+   UVA, 10099, The tourist guide (3)
+   Main, XVIII OI, Garbage (4)
+   Main, PA 2009, The Way to Bytemountain (4)
+   UVA, 10187, From Dusk till Dawn (4)
+   UVA, 10039, Railroads (4)
+   Main, XI OI, The Competition (5)
+   Main, PA 2006, Crayfish (5)
+
+Serie 3: Tricky linear-time
+
+   Main, XIII OI, The disks (2)
+   Main, XV OI, Postering (3)
+   Main, XII OI, Journey to Mars (3)
+   Main, PA 2011, Climbing (3)
+   UVA, 10152, Shellsort (3)
+   Main, IX OI, Parcel (4)
+   LA, CEPC 2009, 4621, Cave (4)
+   LA, CEPC 2006, 3716, DNA Regions (4)
+   Main, XV OI, BBB (5)
+   Main, XIII OI, Frogs (8)
+
+Serie 4: Counting trees
+
+   Timus, 1090, In the army now (3)
+   Main, XIV OI, Megalopolis (3)
+   LA, NWERC 2011, 5902, Movie Collection (3)
+   Main, XII OI, The bus (4)
+   Main, IX OI, Railways (4)
+   Timus, 1890, Money out of thin air (4)
+   Main, XIII OI, Tetris 3D (6)
+   Main, XVII OI, Railway (12)
+
+Serie 5: Greedy
+
+   UVA, 10026, Shoemaker's problem (2)
+   Main, AMPPZ 2012, Do it Tomorrow (2)
+   Main, XI OI, Spies (3)
+   Timus, 1303, Minimal Coverage (3)
+   Main, XII OI, Toy Cars (3)
+   Main, X OI, Chocolate (5)
+   Main, XIII OI, Subway (7)
+
+Serie 6: DPs (*)
+
+   UVA, 116, Unidirectional TSP (2)
+   UVA, 10003, Cutting Sticks (2)
+   Timus, 1501, Sense of Beauty (2)
+   UVA, 10201, Adventures in Moving - Part IV (2)
+   LA, NWERC 2009, 4614, Moving to Nuremberg (3)
+   UVA, 10271, Chopsticks (3)
+   UVA, 10261, Ferry loading (3)
+   Main, XVI OI, Ticket Inspector (4)
+   Main, XII OI, Bank notes (6)
+   Main, XI OI, Strings (8)
+   Main, PA 2009, Drilling (8)
+
+Serie 7: Exponential-time algorithms
+
+   Timus, 1326, Bottle Taps (2)
+   UVA, 704, Colour Hash (3)
+   UVA, 10160, Servicing Stations (3)
+   Timus, 1267, Yekaterinburg Subway (3)
+   Main, XV OI, Subdivision of a kingdom (4, but you can get 3 points for >=60% points and correct answers, and 2 points for >=30% points and correct answers)
+   Main, XI OI, Passage (4)
+   Main, PA 2009, Programming Contest (8)
+
+Serie 8: Combinatorics, number theory, and linear algebra
+
+   Main, PA 2009, Rectangle 2 (2) /* Note: in PA 2010 there is also "Rectangle 2", but we want the one from PA 2009 */
+   Main, PA 2009, (K,N)-knight (2)
+   UVA, 10128, Queue (2)
+   UVA, 10139, Factovisors (2)
+   Main, PA 2009, Chess (3)
+   UVA, 10157, Expressions (3)
+   UVA, 10104, Euclid Problem (3)
+   Main, PA 2011, Double factorial (3)
+   Main, VIII OI, Antiprime numbers (3)
+   Main, PA 2011, Coprime Numbers (4)
+   UVA, 861, Little Bishops (4)
+   Main, AMPPZ 2012, Divisors (5)
+   Main, PA 2009, Cards (5)
+   Timus, 1675, Lunar Code 2 (6)
+   Main, PA 2009, Stamps (7)
+   Main, XII OI, Two Parties (8)
+
+Serie 9: 2SAT, Matchings, and Flows
+
+   Main, VIII OI, Peaceful Comission (3)
+   Main, VI OI, Speleology (3)
+   Main, PA 2010, Evacuation (4)
+   LA, NWERC 2011, 5903, Piece it together (5)
+   LA, NWERC 2011, 5905, Pool Construction (6)
+   LA, NEERC 2002, 2691, Evacuation Plan (6)
+   Main, PA 2010, Riddle (6)
+
+Serie 10: Geometry (*)
+
+   Timus, 1052, Rabbit Hunt (2)
+   UVA, 10167, Birthday Cake (2)
+   LiveArchive, World Finals 2009, Deer-Proof Fence (3)
+   UVA, 10135, Herding Frosh (3)
+   Main, XIII OI, Warehouse (3)
+   Timus, 1215, Exactness of Projectile Hit (3) [the translation from Russian is highly imperfect; you can ask me for clarification]
+   Timus, 1317, Hail (4)
+   Main, XIV OI, Gas Pipelines (4)
+   Main, PA 2009, Byteantean Towns (4)
+   Timus, 1065, Frontier (4)
+   UVA, 10043, Chainsaw Massacre (5)
+   Main, PA 2009, Diamond (5)
+   Main, XIV OI, Axes of Symmetry (5)
+   Main, XIII OI, The Invasion (5)
+   Main, XVII OI, Sheep (6)
+   LiveArchive, World Finals 2011, Coffee Central (6)
+   Main, XII OI, Points (7)
+   Main, XII OI, Dextrogyrate Camel (7)
+   Main, PA 2010, Army Training (9)
+   Main, PA 2006, The Temple (10)
+
+Serie 11: Strings
+
+   UVA, 10252, Common Permutation (1)
+   UVA, 10010, Where is Waldorf (2)
+   Timus, 1423, String Tale (2)
+   Main, PA 2010, Squared words (3)
+   Timus, 1684, Jack's last words (3)
+   Main, XII OI, Periods of words (3)
+   Main, XII OI, Template (3 for >=50 points, 6 for 100 points)
+   Timus, 1158, Censored! (4)
+

@@ -3,13 +3,13 @@ SGU: http://acm.sgu.ru/
 LA (LiveArchive): https://icpcarchive.ecs.baylor.edu/
 UVA: http://uva.onlinejudge.org/
 Timus: http://acm.timus.ru/
-
+[X] = done
 
 Serie 1: Basic graph algorithms (*)
 
-   UVA, 10004, Bicoloring (2)
+   UVA, 10004, Bicoloring (2) [X]
    LA, CEPC 2006, 3721, Islands (2)
-   Main, XII OI, Piggy Banks (3)
+   Main, XII OI, Piggy Banks (3) [X]
    Main, XII OI, Double-row (3)
    Main, XVII OI, Guilds (3)
    Main, XV OI, Toll (3)
@@ -18,10 +18,10 @@ Serie 1: Basic graph algorithms (*)
 
 Serie 2: Advanced graph algorithms
 
-   UVA, 10034, Freckles (2)
+   UVA, 10034, Freckles (2) [X]
    UVA, 10278, Fire Station (3)
    LA, CEPC 2009, 4627, Islands (3)
-   UVA, 10099, The tourist guide (3)
+   UVA, 10099, The tourist guide (3) [X]
    Main, XVIII OI, Garbage (4)
    Main, PA 2009, The Way to Bytemountain (4)
    UVA, 10187, From Dusk till Dawn (4)
@@ -55,10 +55,10 @@ Serie 4: Counting trees
 
 Serie 5: Greedy
 
-   UVA, 10026, Shoemaker's problem (2)
+   UVA, 10026, Shoemaker's problem (2) [X]
    Main, AMPPZ 2012, Do it Tomorrow (2)
    Main, XI OI, Spies (3)
-   Timus, 1303, Minimal Coverage (3)
+   Timus, 1303, Minimal Coverage (3) [X]
    Main, XII OI, Toy Cars (3)
    Main, X OI, Chocolate (5)
    Main, XIII OI, Subway (7)
@@ -89,10 +89,10 @@ Serie 7: Exponential-time algorithms
 
 Serie 8: Combinatorics, number theory, and linear algebra
 
-   Main, PA 2009, Rectangle 2 (2) /* Note: in PA 2010 there is also "Rectangle 2", but we want the one from PA 2009 */
+   Main, PA 2009, Rectangle 2 (2) [X] /* Note: in PA 2010 there is also "Rectangle 2", but we want the one from PA 2009 */
    Main, PA 2009, (K,N)-knight (2)
    UVA, 10128, Queue (2)
-   UVA, 10139, Factovisors (2)
+   UVA, 10139, Factovisors (2) [X]
    Main, PA 2009, Chess (3)
    UVA, 10157, Expressions (3)
    UVA, 10104, Euclid Problem (3)
@@ -118,8 +118,8 @@ Serie 9: 2SAT, Matchings, and Flows
 
 Serie 10: Geometry (*)
 
-   Timus, 1052, Rabbit Hunt (2)
-   UVA, 10167, Birthday Cake (2)
+   Timus, 1052, Rabbit Hunt (2) [X]
+   UVA, 10167, Birthday Cake (2) [X]
    LiveArchive, World Finals 2009, Deer-Proof Fence (3)
    UVA, 10135, Herding Frosh (3)
    Main, XIII OI, Warehouse (3)
@@ -141,9 +141,9 @@ Serie 10: Geometry (*)
 
 Serie 11: Strings
 
-   UVA, 10252, Common Permutation (1)
-   UVA, 10010, Where is Waldorf (2)
-   Timus, 1423, String Tale (2)
+   UVA, 10252, Common Permutation (1) [X]
+   UVA, 10010, Where is Waldorf (2) [X]
+   Timus, 1423, String Tale (2) [X]
    Main, PA 2010, Squared words (3)
    Timus, 1684, Jack's last words (3)
    Main, XII OI, Periods of words (3)

@@ -5,7 +5,7 @@ UVA: http://uva.onlinejudge.org/
 Timus: http://acm.timus.ru/
 [X] = done
 
-Serie 1: Basic graph algorithms (*)
+Serie 1: Basic graph algorithms (*) 5/22
 
    UVA, 10004, Bicoloring (2) [X]
    LA, CEPC 2006, 3721, Islands (2)
@@ -16,7 +16,7 @@ Serie 1: Basic graph algorithms (*)
    Main, XIV OI, Offices (3)
    UVA, 10150, Doublets (3)
 
-Serie 2: Advanced graph algorithms
+Serie 2: Advanced graph algorithms 5/37
 
    UVA, 10034, Freckles (2) [X]
    UVA, 10278, Fire Station (3)
@@ -29,7 +29,7 @@ Serie 2: Advanced graph algorithms
    Main, XI OI, The Competition (5)
    Main, PA 2006, Crayfish (5)
 
-Serie 3: Tricky linear-time
+Serie 3: Tricky linear-time 0/39
 
    Main, XIII OI, The disks (2)
    Main, XV OI, Postering (3)
@@ -42,7 +42,7 @@ Serie 3: Tricky linear-time
    Main, XV OI, BBB (5)
    Main, XIII OI, Frogs (8)
 
-Serie 4: Counting trees
+Serie 4: Counting trees 0/39
 
    Timus, 1090, In the army now (3)
    Main, XIV OI, Megalopolis (3)
@@ -53,7 +53,7 @@ Serie 4: Counting trees
    Main, XIII OI, Tetris 3D (6)
    Main, XVII OI, Railway (12)
 
-Serie 5: Greedy
+Serie 5: Greedy 5/25
 
    UVA, 10026, Shoemaker's problem (2) [X]
    Main, AMPPZ 2012, Do it Tomorrow (2)
@@ -63,7 +63,7 @@ Serie 5: Greedy
    Main, X OI, Chocolate (5)
    Main, XIII OI, Subway (7)
 
-Serie 6: DPs (*)
+Serie 6: DPs (*) 0/43
 
    UVA, 116, Unidirectional TSP (2)
    UVA, 10003, Cutting Sticks (2)
@@ -77,7 +77,7 @@ Serie 6: DPs (*)
    Main, XI OI, Strings (8)
    Main, PA 2009, Drilling (8)
 
-Serie 7: Exponential-time algorithms
+Serie 7: Exponential-time algorithms 0/27
 
    Timus, 1326, Bottle Taps (2)
    UVA, 704, Colour Hash (3)
@@ -87,7 +87,7 @@ Serie 7: Exponential-time algorithms
    Main, XI OI, Passage (4)
    Main, PA 2009, Programming Contest (8)
 
-Serie 8: Combinatorics, number theory, and linear algebra
+Serie 8: Combinatorics, number theory, and linear algebra 7/62
 
    Main, PA 2009, Rectangle 2 (2) [X] /* Note: in PA 2010 there is also "Rectangle 2", but we want the one from PA 2009 */
    Main, PA 2009, (K,N)-knight (2)
@@ -106,7 +106,7 @@ Serie 8: Combinatorics, number theory, and linear algebra
    Main, PA 2009, Stamps (7)
    Main, XII OI, Two Parties (8)
 
-Serie 9: 2SAT, Matchings, and Flows
+Serie 9: 2SAT, Matchings, and Flows 0/33
 
    Main, VIII OI, Peaceful Comission (3)
    Main, VI OI, Speleology (3)
@@ -116,7 +116,7 @@ Serie 9: 2SAT, Matchings, and Flows
    LA, NEERC 2002, 2691, Evacuation Plan (6)
    Main, PA 2010, Riddle (6)
 
-Serie 10: Geometry (*)
+Serie 10: Geometry (*) 4/97
 
    Timus, 1052, Rabbit Hunt (2) [X]
    UVA, 10167, Birthday Cake (2) [X]
@@ -139,7 +139,7 @@ Serie 10: Geometry (*)
    Main, PA 2010, Army Training (9)
    Main, PA 2006, The Temple (10)
 
-Serie 11: Strings
+Serie 11: Strings 5/24
 
    UVA, 10252, Common Permutation (1) [X]
    UVA, 10010, Where is Waldorf (2) [X]
@@ -150,3 +150,4 @@ Serie 11: Strings
    Main, XII OI, Template (3 for >=50 points, 6 for 100 points)
    Timus, 1158, Censored! (4)
 
+Total: 31/448

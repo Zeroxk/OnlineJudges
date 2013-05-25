@@ -95,7 +95,7 @@ Serie 8: Combinatorics, number theory, and linear algebra
    UVA, 10139, Factovisors (2) [X]
    Main, PA 2009, Chess (3)
    UVA, 10157, Expressions (3)
-   UVA, 10104, Euclid Problem (3)
+   UVA, 10104, Euclid Problem (3) [X]
    Main, PA 2011, Double factorial (3)
    Main, VIII OI, Antiprime numbers (3)
    Main, PA 2011, Coprime Numbers (4)

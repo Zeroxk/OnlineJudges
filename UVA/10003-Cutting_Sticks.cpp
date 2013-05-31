@@ -20,6 +20,7 @@ int main(void) {
             scanf("%d", &cut);
             cuts.push_back(cut);
         }
+        printf("cuts\n");
 
     }
 

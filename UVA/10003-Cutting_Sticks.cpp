@@ -3,6 +3,8 @@
 
 using namespace std;
 
+vector<int> cuts;
+
 int main(void) {
     
     while(true) {
@@ -14,13 +16,14 @@ int main(void) {
         int n;
         scanf("%d", &n);
 
-        vector<int> cuts = vector<int>();
         while(n--) {
             int cut;
             scanf("%d", &cut);
             cuts.push_back(cut);
         }
-        printf("cuts\n");
+        
+        cuts[0] = 0;
+        cuts.back = length;
 
     }
 

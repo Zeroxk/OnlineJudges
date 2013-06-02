@@ -66,7 +66,7 @@ Serie 5: Greedy 5/25
 Serie 6: DPs (*) 0/43
 
    UVA, 116, Unidirectional TSP (2)
-   UVA, 10003, Cutting Sticks (2)
+   UVA, 10003, Cutting Sticks (2) [X]
    Timus, 1501, Sense of Beauty (2)
    UVA, 10201, Adventures in Moving - Part IV (2)
    LA, NWERC 2009, 4614, Moving to Nuremberg (3)

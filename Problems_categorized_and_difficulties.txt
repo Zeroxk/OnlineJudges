@@ -29,9 +29,9 @@ Serie 2: Advanced graph algorithms 5/37
    Main, XI OI, The Competition (5)
    Main, PA 2006, Crayfish (5)
 
-Serie 3: Tricky linear-time 3/39
+Serie 3: Tricky linear-time 5/39
 
-   Main, XIII OI, The disks (2)
+   Main, XIII OI, The disks (2) [X]
    Main, XV OI, Postering (3)
    Main, XII OI, Journey to Mars (3)
    Main, PA 2011, Climbing (3)
@@ -63,7 +63,7 @@ Serie 5: Greedy 5/25
    Main, X OI, Chocolate (5)
    Main, XIII OI, Subway (7)
 
-Serie 6: DPs (*) 0/43
+Serie 6: DPs (*) 2/43
 
    UVA, 116, Unidirectional TSP (2)
    UVA, 10003, Cutting Sticks (2) [X]
@@ -150,4 +150,4 @@ Serie 11: Strings 5/24
    Main, XII OI, Template (3 for >=50 points, 6 for 100 points)
    Timus, 1158, Censored! (4)
 
-Total: 34/448
+Total: 38/448

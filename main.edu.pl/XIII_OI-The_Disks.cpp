@@ -6,62 +6,57 @@ int main(void) {
     int height, disks;
     scanf("%d %d", &height, &disks);
 
-    std::vector<int> hole = std::vector<int>();
+    std::vector<int> hole = std::vector<int>(height);
     for(int i=0; i<height; i++) {
         int diaHole;
         scanf("%d", &diaHole);
-        hole.push_back(diaHole);
+        hole[i] = diaHole;
     }
 
-    std::vector<int> disk = std::vector<int>();
-    for(int i=0; i<disks; i++) {
-        int diaDisk;
-        scanf("%d", &diaDisk);
-        disk.push_back(diaDisk);
-    }
-
-    int ans = 0;
-    int ind = hole.size(); 
-    for(int i=0; i<disk.size(); i++) {
-        for(int j=0; j<ind; j++) {
-            if(hole[j] < disk[i]) {
-                //printf("Stopped at %d\n", hole[j]);
-                //hole.erase(hole.begin()+j, hole.end());
-               
-                ind = j;
-
-                hole[ind] = -1;
-            }
-
-            if(j == ind-1 && hole[ind] != -1) {
-                hole[ind] = -1;
-                ind--;
-            }
-
-            
+    int min = hole[0];
+    for(int i=1; i<height; i++) {
+        if(min < hole[i]) {
+            hole[i] = min;
+        }else {
+            min = hole[i];
         }
     }
 
-    printf("%d\n", ind);
+    std::vector<int> disk = std::vector<int>(disks);
+    for(int i=0; i<disks; i++) {
+        int diaDisk;
+        scanf("%d", &diaDisk);
+        disk[i] = diaDisk;
+    }
 
-    /*for(int i=0; i<disk.size(); i++) {
-        
-        while(disk[i] >= hole.back()) {
-            printf("Passing through hole %d\n", hole.back());
+    int ind = 0;
+    while(hole.size() >= 0 && ind < disk.size()) {
+
+        int d = disk[ind];
+
+        if(d > hole[0]) break;
+
+        ind++;
+
+        while(d > hole.back() && hole.size()>0) {
+            //printf("Passing through hole %d\n", hole.back());
             hole.pop_back();
         }
 
         if(hole.size() == 0) break;
+
+        hole.pop_back();
         
-        printf("Disk %d stopped at %d\n", disk[i], hole.back());
-        hole[hole.size()-1] = disk[i];
+        //printf("Disk %d stopped at %d\n", d, hole.back());
         //hole.pop_back(); 
 
-        printf("Last elem is now %d\n\n", hole.back());
+    }
 
-    }*/
-
-    //printf("%d\n", hole.size());
+    if(ind != disk.size()) {
+        printf("0\n");
+    }else {
+        printf("%d\n", hole.size()+1);
+    }
 
 
     return 0;

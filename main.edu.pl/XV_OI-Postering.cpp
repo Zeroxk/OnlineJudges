@@ -15,12 +15,12 @@ int main(void) {
         scanf("%d %d", &l, &h);
         
         while(!buildings.empty() && buildings.top() > h) {
-            printf("Popping %d\n", buildings.top());
+            //printf("Popping %d\n", buildings.top());
             buildings.pop();
         }
 
         if(buildings.empty() || buildings.top() < h) {
-            printf("Pushing %d\n", h);
+            //printf("Pushing %d\n", h);
             buildings.push(h);
             ans++;
         }

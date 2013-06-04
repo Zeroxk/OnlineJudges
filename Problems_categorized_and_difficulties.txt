@@ -116,14 +116,14 @@ Serie 9: 2SAT, Matchings, and Flows 0/33
    LA, NEERC 2002, 2691, Evacuation Plan (6)
    Main, PA 2010, Riddle (6)
 
-Serie 10: Geometry (*) 4/97
+Serie 10: Geometry (*) 7/97
 
    Timus, 1052, Rabbit Hunt (2) [X]
    UVA, 10167, Birthday Cake (2) [X]
    LiveArchive, World Finals 2009, Deer-Proof Fence (3)
    UVA, 10135, Herding Frosh (3)
    Main, XIII OI, Warehouse (3)
-   Timus, 1215, Exactness of Projectile Hit (3) [the translation from Russian is highly imperfect; you can ask me for clarification]
+   Timus, 1215, Exactness of Projectile Hit (3) [X] [the translation from Russian is highly imperfect; you can ask me for clarification]
    Timus, 1317, Hail (4)
    Main, XIV OI, Gas Pipelines (4)
    Main, PA 2009, Byteantean Towns (4)
@@ -150,4 +150,4 @@ Serie 11: Strings 5/24
    Main, XII OI, Template (3 for >=50 points, 6 for 100 points)
    Timus, 1158, Censored! (4)
 
-Total: 44/448
+Total: 47/448

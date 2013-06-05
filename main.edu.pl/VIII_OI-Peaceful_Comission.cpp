@@ -40,20 +40,26 @@ int main(void) {
 
     }
 
+    bool nie = false;
     for(int i=0; i<2*n; i+=2) {
         if(canChoose[i] && canChoose[i+1]) {
             //printf("Can choose %d\n", i+1);
             chosen[i] = true;
         }
-    }
 
-    bool nie = false;
-    for(int i=0; i<2*n; i+=2) {
         if(!chosen[i] && !chosen[i+1]) {
             nie = true;
             break;
         }
     }
+
+    /*bool nie = false;
+    for(int i=0; i<2*n; i+=2) {
+        if(!chosen[i] && !chosen[i+1]) {
+            nie = true;
+            break;
+        }
+    }*/
 
     if(nie) {
         printf("NIE\n");

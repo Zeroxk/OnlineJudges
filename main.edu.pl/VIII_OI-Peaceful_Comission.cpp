@@ -53,14 +53,6 @@ int main(void) {
         }
     }
 
-    /*bool nie = false;
-    for(int i=0; i<2*n; i+=2) {
-        if(!chosen[i] && !chosen[i+1]) {
-            nie = true;
-            break;
-        }
-    }*/
-
     if(nie) {
         printf("NIE\n");
     }else {

@@ -15,7 +15,7 @@ public class Exactness_of_Projectile_Hit {
 		
 		int polyN = sc.nextInt();
 		
-		ArrayList<Point2D.Double> polyPoints = new ArrayList<Point2D.Double>();
+		ArrayList<Point2D.Double> polyPoints = new ArrayList<>();
 		for(int i=0; i<polyN; i++) {
 			
 			double x = sc.nextDouble();
@@ -38,7 +38,8 @@ public class Exactness_of_Projectile_Hit {
 					Point2D.Double p2 = polyPoints.get(j);
 					//System.out.println("Point 1 " + p1.toString() + " Point 2 " + p2.toString());
 					
-					double m = Line2D.ptSegDist(p1.getX(), p1.getY(), p2.getX(), p2.getY(), projectile.getX(), projectile.getY());
+					Line2D.Double line = new Line2D.Double(p1, p2);
+					double m = line.ptSegDist(projectile);
 					//System.out.println("Dist from point to line " + m);
 					
 					if(m < min) min = m;

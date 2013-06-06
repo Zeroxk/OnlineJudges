@@ -10,19 +10,19 @@ const int MAXN = 201;
 
 int capacities[MAXN][MAXN];
 int flows[MAXN][MAXN];
-int parents[MAXN]; //Path in reverse found by bfs
+int path[MAXN]; //Path in reverse found by bfs
 int pathCapacity[MAXN]; //Max flow to node in path found by bfs
 
 int bfs(vector<vector<int> > &graph, int start, int dest) {
 
     //printf("BFS is running\n");
-    memset(parents, -1, sizeof(parents));
+    memset(path, -1, sizeof(path));
     memset(pathCapacity, 0, sizeof(pathCapacity));
 
     queue<int> q;
     q.push(start);
 
-    parents[start] = -2;
+    path[start] = start;
     pathCapacity[start] = INT_MAX;
 
     while(!q.empty()) {
@@ -32,9 +32,9 @@ int bfs(vector<vector<int> > &graph, int start, int dest) {
         for(int i=0; i<graph[u].size(); i++) {
             int v = graph[u][i];
 
-            if(parents[v] == -1) {
+            if(path[v] == -1) {
                 if(capacities[u][v] - flows[u][v] > 0) {
-                    parents[v] = u;
+                    path[v] = u;
 
                     int resCap = capacities[u][v] - flows[u][v];
                     pathCapacity[v] = min(pathCapacity[u], resCap);
@@ -66,7 +66,7 @@ int edmondsKarp(vector<vector<int> > &graph, int source, int sink) {
         int currNode = sink;
 
         while(currNode != source) {
-            int prevNode = parents[currNode];
+            int prevNode = path[currNode];
             flows[prevNode][currNode] += flow;
             flows[currNode][prevNode] -= flow;
 
@@ -94,7 +94,7 @@ int main(void) {
             a--;
             capacities[i][a] = 1;
             graph[i].push_back(a);
-            graph[a].push_back(i);
+            //graph[a].push_back(i);
         }
     }
 

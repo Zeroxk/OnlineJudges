@@ -27,19 +27,15 @@ int main(void) {
     for(int i=0; i<edges.size(); i++) {
         Edge e = edges[i];
         if(guilds[e.a] == 'N') {
-            if(guilds[e.b] == 'K') {
-                guilds[e.a] = 'S';
-            }else {
-                guilds[e.a] = 'K';
-            }
+            
+            guilds[e.a] = guilds[e.b] == 'K' ? 'S' : 'K';
+            
         }
 
         if(guilds[e.b] == 'N') {
-            if(guilds[e.a] == 'K') {
-                guilds[e.b] = 'S';
-            }else {
-                guilds[e.b] = 'K';
-            }
+            
+            guilds[e.b] = guilds[e.a] == 'K' ? 'S' : 'K';
+            
         }
     }
 

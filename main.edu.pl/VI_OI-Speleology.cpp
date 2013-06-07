@@ -92,12 +92,24 @@ int main(void) {
             int a;
             scanf("%d", &a);
             a--;
-            capacities[i][a] = 1;
+            if(i == 0 || a == n-1) {
+                capacities[i][a] = 1;
+            }else {
+                capacities[i][a] = n;
+            }
             graph[i].push_back(a);
-            //graph[a].push_back(i);
+            graph[a].push_back(i);
         }
     }
 
+    /*for(int i=0; i<n; i++) {
+        printf("Node %d: ", i+1);
+        for(int j=0; j<n; j++) {
+            printf("%d ", capacities[i][j]);
+        }
+        printf("\n");
+    }*/
+    
     int ans = edmondsKarp(graph, 0, n-1);
 
     printf("%d\n", ans);

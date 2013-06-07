@@ -106,10 +106,10 @@ Serie 8: Combinatorics, number theory, and linear algebra 7/62
    Main, PA 2009, Stamps (7)
    Main, XII OI, Two Parties (8)
 
-Serie 9: 2SAT, Matchings, and Flows 3/33
+Serie 9: 2SAT, Matchings, and Flows 6/33
 
    Main, VIII OI, Peaceful Comission (3) [X]
-   Main, VI OI, Speleology (3)
+   Main, VI OI, Speleology (3) [X]
    Main, PA 2010, Evacuation (4)
    LA, NWERC 2011, 5903, Piece it together (5)
    LA, NWERC 2011, 5905, Pool Construction (6)
@@ -150,4 +150,4 @@ Serie 11: Strings 5/24
    Main, XII OI, Template (3 for >=50 points, 6 for 100 points)
    Timus, 1158, Censored! (4)
 
-Total: 53/448
+Total: 56/448

@@ -5,13 +5,13 @@ UVA: http://uva.onlinejudge.org/
 Timus: http://acm.timus.ru/
 [X] = done
 
-Serie 1: Basic graph algorithms (*) 5/22
+Serie 1: Basic graph algorithms (*) 8/22
 
    UVA, 10004, Bicoloring (2) [X]
    LA, CEPC 2006, 3721, Islands (2)
    Main, XII OI, Piggy Banks (3) [X]
    Main, XII OI, Double-row (3)
-   Main, XVII OI, Guilds (3)
+   Main, XVII OI, Guilds (3) [X]
    Main, XV OI, Toll (3)
    Main, XIV OI, Offices (3)
    UVA, 10150, Doublets (3)
@@ -150,4 +150,4 @@ Serie 11: Strings 5/24
    Main, XII OI, Template (3 for >=50 points, 6 for 100 points)
    Timus, 1158, Censored! (4)
 
-Total: 50/448
+Total: 53/448

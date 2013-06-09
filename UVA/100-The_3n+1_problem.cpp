@@ -9,7 +9,7 @@ int main(void) {
     unsigned int a,b;
     unsigned int memo[SIZE];
     //printf("%u\n", sizeof(memo));
-    while(scanf("%u %u", &a, &b) != EOF) {
+    while(scanf("%u %u", &a, &b) == 2) {
         unsigned int maxCycles = 0;
         
         bool swapped = false;

@@ -10,6 +10,11 @@ const int MAXM = 50001;
 int visited[MAXN];
 int nodes[MAXN];
 
+struct Node {
+    int owes;
+    Node* parent;
+};
+
 int dfs(vector<vector<int> > graph, int u) {
     int cost = nodes[u];
     visited[u] = 1;

@@ -8,28 +8,20 @@ const int MAXN = 10001;
 const int MAXM = 50001;
 
 int visited[MAXN];
+vector<vector<int> > graph;
+int nodes[MAXN];
 
-struct Node {
-    int owes, index;
-    Node* parent;
-};
-
-Node* findLeader(Node* n) {
-    if(n->parent == n) return n;
-
-    return findLeader(n->parent);
-}
-
-void myUnion(Node* x, Node* y) {
-    Node* xL = findLeader(x);
-    Node* yL = findLeader(y);
-
-    //printf("xL %d yL %d\n", xL->index, yL->index);
-    if(xL != yL) {
-        y->parent->owes += x->parent->owes;
-        x->parent = y->parent;
-        //printf("%d is component leader and owes %d\n", x->parent->index, x->parent->owes);
+int dfs(int u) {
+    int cost = nodes[u];
+    visited[u] = 1;
+    for(int i=0; i<graph[u].size(); i++) {
+        int v = graph[u][i];
+        if(visited[v] == -1) {
+            cost += dfs(v);
+        }
     }
+
+    return cost;
 }
 
 int main(void) {
@@ -42,35 +34,27 @@ int main(void) {
         int n,m;
         scanf("%d %d", &n, &m);
         
-        vector<Node> nodes (n);
+        graph = vector<vector<int> > (n);
         for(int i=0; i<n; i++) {
             visited[i] = -1;
-            int a;
-            scanf("%d", &a);
-            Node n = {a};
-            nodes[i] = n;
-            nodes[i].parent = &nodes[i];
-            nodes[i].index = i;
+            scanf("%d", &nodes[i]);
         }
 
         for(int i=0; i<m; i++) {
             int a,b;
             scanf("%d %d", &a, &b);
-            myUnion(&nodes[a],&nodes[b]);
+            graph[a].push_back(b);
+            graph[b].push_back(a);
         }
 
         bool possible = true;
         for(int i=0; i<n; i++) {
-            Node* leader = findLeader(&nodes[i]);
-            if(visited[leader->index] == -1) {
-                if(leader->owes != 0) {
-                    //printf("Leader is %d, component owes %d\n", leader->index, leader->owes);
+            if(visited[i] == -1) {
+                int cost = dfs(i);
+                if(cost != 0) {
                     possible = false;
                     break;
                 }
-                
-                visited[leader->index] = 1;
-                
             }
         }
 

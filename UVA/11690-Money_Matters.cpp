@@ -8,28 +8,28 @@ const int MAXN = 10001;
 const int MAXM = 50001;
 
 int visited[MAXN];
-int nodes[MAXN];
 
 struct Node {
-    int owes;
+    int owes, index;
     Node* parent;
 };
 
-int dfs(vector<vector<int> > graph, int u) {
-    int cost = nodes[u];
-    visited[u] = 1;
-    
-    //printf("Visiting node %d\n", u);
-    for(int i=0; i<graph[u].size(); i++) {
-        int v = graph[u][i];
+Node* findLeader(Node* n) {
+    if(n->parent == n) return n;
 
-        if(visited[v] == -1) {
-            cost += dfs(graph, v);
-        }
+    return findLeader(n->parent);
+}
+
+void myUnion(Node* x, Node* y) {
+    Node* xL = findLeader(x);
+    Node* yL = findLeader(y);
+
+    //printf("xL %d yL %d\n", xL->index, yL->index);
+    if(xL != yL) {
+        y->parent->owes += x->parent->owes;
+        x->parent = y->parent;
+        //printf("%d is component leader and owes %d\n", x->parent->index, x->parent->owes);
     }
-    
-    //printf("Cost is %d\n", cost);
-    return cost;
 }
 
 int main(void) {
@@ -42,29 +42,35 @@ int main(void) {
         int n,m;
         scanf("%d %d", &n, &m);
         
+        vector<Node> nodes (n);
         for(int i=0; i<n; i++) {
             visited[i] = -1;
-            scanf("%d", &nodes[i]);
+            int a;
+            scanf("%d", &a);
+            Node n = {a};
+            nodes[i] = n;
+            nodes[i].parent = &nodes[i];
+            nodes[i].index = i;
         }
 
-        vector<vector<int> > graph (n);
         for(int i=0; i<m; i++) {
             int a,b;
             scanf("%d %d", &a, &b);
-            graph[a].push_back(b);
-            graph[b].push_back(a);
+            myUnion(&nodes[a],&nodes[b]);
         }
 
         bool possible = true;
         for(int i=0; i<n; i++) {
-            if(visited[i] == -1) {
-                //printf("Visiting new component\n");
-                int cost = dfs(graph, i);
-
-                if(cost != 0) {
+            Node* leader = findLeader(&nodes[i]);
+            if(visited[leader->index] == -1) {
+                if(leader->owes != 0) {
+                    //printf("Leader is %d, component owes %d\n", leader->index, leader->owes);
                     possible = false;
                     break;
                 }
+                
+                visited[leader->index] = 1;
+                
             }
         }
 

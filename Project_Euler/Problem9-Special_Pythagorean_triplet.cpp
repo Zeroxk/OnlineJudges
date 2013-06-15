@@ -7,7 +7,7 @@ int main(void) {
     
     bool found = false;
     int i = 0;
-    int s = 100000;
+    int s = 1000;
     while(!found && i<s) {  
         i++;
         int aa = i*i;
